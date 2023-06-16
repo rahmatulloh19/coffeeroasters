@@ -76,7 +76,7 @@ img {
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 1320px;
   width: 100%;
   margin: 0 auto;
   padding: 0 24px;
@@ -155,6 +155,11 @@ img {
   border-radius: 10px;
 }
 
+.hero__text-inner {
+  max-width: 375px;
+  margin: 0 auto;
+}
+
 .hero__title {
   font-family: "Fraunces";
   margin-top: 0;
@@ -164,9 +169,8 @@ img {
   line-height: 40px;
 }
 
-.hero__text-inner {
+.hero__text-inner:nth-of-type(2) {
   max-width: 381px;
-  margin: 0 auto;
 }
 
 .hero__desc {
@@ -263,10 +267,20 @@ only screen and (                min-resolution: 2dppx) {
     text-align: left;
     background-image: url("../images/index/herobgtablet.png");
   }
-  
+
   .hero__text-inner {
     max-width: 398px;
     margin: 0;
+  }
+
+  .hero__title {
+    font-size: 48px;
+    line-height: 48px;
+  }
+
+  .hero__desc {
+    margin-bottom: 40px;
+    font-size: 15px;
   }
   @media
   only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -283,6 +297,13 @@ only screen and (                min-resolution: 2dppx) {
     }
   } 
 }
+
+@media only screen and (min-width: 1050px) {
+  .hero__title {
+    font-size: 55px;
+  }
+}
+
 
 /* Media quary Desktop */
 
