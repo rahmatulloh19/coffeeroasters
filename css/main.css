@@ -1,36 +1,40 @@
+/* Variables */
+
 :root {
-  --main-ff: "Fraunces"
-  --secondary-ff: "Barlow"
+  /* --main-fraunces: "Fraunces"
+  --secondary-ff: "Barlow" */
   --main-fw: 900;
   --global-fw: 400;
   --main-lh: 32px;
   --main-fz: 24px;
-  --main-text-color: #fefcf7;
   --secondary-text-color: #333d4b;
   --main-bg-color: #2c343e;
   --secondary-bg-color: #0e8784;
+  --global-content-color: #fefcf7;
   --mixin: #fdd6ba;
 }
+
+/* Font families */
 
 @font-face {
   font-family: "Fraunces";
   font-weight: 900;
   font-display: swap;
   src: url("../fonts/frauncesblack.woff2") format("woff2"),
-       url("../fonts/frauncesblack.woff") format("woff")
+  url("../fonts/frauncesblack.woff") format("woff")
 }
 @font-face {
   font-family: "Barlow";
   font-display: swap;
   src: url("../fonts/barlowregular.woff2") format("woff2"),
-       url("../fonts/barlowregular.woff") format("woff")
+  url("../fonts/barlowregular.woff") format("woff")
 }
 @font-face {
   font-family: "Barlow";
   font-weight: 700;
   font-display: swap;
   src: url("../fonts/barlowbold.woff2") format("woff2"),
-       url("../fonts/barlowbold.woff") format("woff")
+  url("../fonts/barlowbold.woff") format("woff")
 }
 
 /* Mobile first */
@@ -48,10 +52,11 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  font-family: var(--main-ff), "Times New Roman", serif;
+  font-family: "Fraunces", "Times New Roman", serif;
   font-weight: var(--main-fw);
   font-size: var(--main-fz);
   line-height: var(--main-lh);
+  background-color: var(--global-content-color);
 }
 
 img {
@@ -63,7 +68,7 @@ img {
   position: absolute;
   width: 1px;
   height: 1px;
-  margin: 0;
+  margin: -1px;
   padding: 0;
   border: 0;
   overflow: hidden;
@@ -85,23 +90,119 @@ img {
 
 /* Site header styles begin */
 
+.site-header {
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
 
+.site-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header__menu {
+  width: 16px;
+  height: 15px;
+  padding: 0;
+  background-color: transparent;
+  background-image: url("../images/hamburmenu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
+.navigation {
+  display: none;
+}
+
+.navigation__list {
+  display: flex;
+  margin: 0;
+  padding-left: 0;
+  column-gap: 32px;
+  list-style: none;
+}
+
+.navigation__link {
+  font-family: var(--secondary-ff);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 0.9230769276618958px;
+  color: #83888f;
+  text-decoration: none;
+}
 
 /* Site header styles end */
 
-/* Site main begin */
+/* Site main styles begin */
+/* Heero section styles started */
+
+.hero {
+  padding-bottom: 120px;
+}
+
+.hero__text {
+  padding: 100px 24px 99px 24px;
+  font-family: var(--main-ff);
+  text-align: center;
+  background-image: url("../images/index/herobg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  color: var(--global-content-color);
+  border-radius: 10px;
+}
+
+.hero__title {
+  font-family: "Fraunces";
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 32px;
+  font-weight: var(--main-fw);
+  line-height: 40px;
+}
+
+.hero__text-inner {
+  max-width: 381px;
+  margin: 0 auto;
+}
+
+.hero__desc {
+  margin-top: 0;
+  margin-bottom: 39px;
+  font-family: "Barlow", "Arial", sans-serif;  
+  font-size: 12px;
+  font-weight: var(--global-fw);
+  line-height: 25px;
+  letter-spacing: 0px;
+  opacity: 0.8;  
+}
+
+.hero__more {
+  display: inline-block;
+  width: 217px;
+  padding: 15px 16px 16px 16px;
+  font-size: 18px;
+  font-weight: var(--main-fw);
+  line-height: 25px;
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+  background-color: var(--secondary-bg-color);
+  border-radius: 6px;
+}
+
+/* Hero section styles finished */
+/* Site main styles end */
+
+/* Site footer styles begin */
 
 
 
 
-/* Site main end */
-
-/* Site footer begin */
-
-
-
-
-/* Site footer end */
+/* Site footer styles end */
 
 
 /* Retina background images */
@@ -115,12 +216,144 @@ only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) { 
   
   /* Retina-specific stuff here */
+  
+  .hero__text {
+    background-image: url("../images/index/herobg@2x.png");
+  }
 } 
 
 
 /* Media quary Tablet */
 
+@media only screen and (min-width: 500px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .logo__img {
+    width: 236px;
+    height: 26px;
+  }
+  
+  .hero__title {
+    font-size: 40px;
+  }
+  
+  .hero__desc {
+    font-size: 15px;
+  }
+}
 
+@media only screen and (min-width: 768px) {
+  .site-header {
+    padding-top: 40px;
+    padding-bottom: 53px;
+  }
+  
+  .site-header__menu {
+    display: none;
+  }
+  
+  .navigation {
+    display: block;
+  }
+  
+  .hero__text {
+    padding: 104px 0 104px 54px;
+    text-align: left;
+    background-image: url("../images/index/herobgtablet.png");
+  }
+  
+  .hero__text-inner {
+    max-width: 398px;
+    margin: 0;
+  }
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) { 
+    
+    /* Retina-specific stuff here */
+    
+    .hero__text {
+      background-image: url("../images/index/herobgtablet@2x.png");
+    }
+  } 
+}
 
 /* Media quary Desktop */
 
+@media only screen and (min-width: 1280px) {
+  .site-header {
+    padding-top: 43px;
+  }
+  
+  .navigation__link {
+    transition: color 0.4s ease, opacity 0.4s ease;
+  }
+  
+  .navigation__link:hover {
+    color: var(--secondary-text-color);
+  }
+
+  .navigation__link:active {
+    opacity: 0.8;
+  }
+  
+  .hero__text {
+    padding: 117px 0 116px 86px;
+    background-image: url("../images/index/herobgdesktop.png");
+  }
+
+  .hero__text-inner {
+    max-width: 493px;
+  }
+
+  .hero__title {
+    margin-bottom: 32px;
+    font-size: 72px;
+    line-height: 72px;
+  }
+
+  .hero__text-inner:nth-of-type(2) {
+    max-width: 444px;
+  }
+
+  .hero__desc {
+    margin-bottom: 56px;
+    font-size: 16px;
+    font-weight: var(--global-fw);
+    line-height: 26px;
+  }
+
+  .hero__more {
+    transition: background-color 0.4s ease, opacity 0.4s ease;
+  }
+
+  .hero__more:hover {
+    background-color: #66d2cf;
+  }
+
+  .hero__more:active {
+    opacity: 0.8;
+  }
+
+  
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) { 
+    
+    /* Retina-specific stuff here */
+    
+    .hero__text {
+      background-image: url("../images/index/herobgdesktop@2x.png");
+    }
+  } 
+}
