@@ -621,6 +621,8 @@ only screen and (                min-resolution: 2dppx) {
 
   .collection__shadow {
     top: -66px;
+    left: calc(50%);
+    transform: translateX(-50%);
   }
 
   .collection__list {
