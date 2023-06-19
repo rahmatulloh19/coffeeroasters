@@ -137,7 +137,7 @@ img {
 /* Site header styles end */
 
 /* Site main styles begin */
-/* Heero section styles started */
+/* Hero section styles started */
 
 .hero {
   padding-bottom: 120px;
@@ -155,13 +155,13 @@ img {
   border-radius: 10px;
 }
 
-.hero__text-inner {
+.hero__title-wrapper {
   max-width: 375px;
   margin: 0 auto;
 }
 
 .hero__title {
-  font-family: "Fraunces";
+  font-family: "Fraunces", "Times New Roman", serif;
   margin-top: 0;
   margin-bottom: 24px;
   font-size: 32px;
@@ -169,8 +169,9 @@ img {
   line-height: 40px;
 }
 
-.hero__text-inner:nth-of-type(2) {
-  max-width: 381px;
+.hero__desc-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .hero__desc {
@@ -186,7 +187,7 @@ img {
 
 .hero__more {
   display: inline-block;
-  width: 217px;
+  min-width: 217px;
   padding: 15px 16px 16px 16px;
   font-size: 18px;
   font-weight: var(--main-fw);
@@ -199,6 +200,84 @@ img {
 }
 
 /* Hero section styles finished */
+/* Collection section styles started */
+
+.collection {
+  position: relative;
+  padding: 0 20px 120px;
+  text-align: center;
+  z-index: 3;
+}
+
+.collection__shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 1280px;
+  width: 100%;
+  height: 72px;
+  background-image: linear-gradient(180deg, #fefcf700 0%, #fefcf7 100%);
+}
+
+.collection__title {
+  margin-top: 0;
+  margin-bottom: 13px;
+  font-size: 32px;
+  line-height: 72px;
+  color: #83888f;
+}
+
+.collection__list {
+  display: flex;
+  flex-flow: column wrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  color: var(--secondary-text-color);
+}
+
+.collection__item:not(:last-child) {
+  margin-bottom: 48px;
+}
+
+.collection__item::before {
+  display: block;
+  width: 200px;
+  height: 151px;
+  margin: 0 auto 24px;
+  background-image: url("../images/index/gran.png");
+  content: "";
+}
+
+.collection__item--planalto::before {
+  background-image: url("../images/index/planalto.png");
+}
+
+.collection__item--piccollo::before {
+  background-image: url("../images/index/piccollo.png");
+}
+
+.collection__item--danche::before {
+  background-image: url("../images/index/danche.png");
+}
+
+.collection__subtitle {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.collection__desc {
+  margin: 0;
+  font-family: "Barlow", "Arial", sans-serif;
+  font-size: 15px;
+  font-weight: var(--global-fw);
+  line-height: 25px;
+}
+
+/* Collection section styles finished */
 /* Site main styles end */
 
 /* Site footer styles begin */
@@ -224,19 +303,40 @@ only screen and (                min-resolution: 2dppx) {
   .hero__text {
     background-image: url("../images/index/herobg@2x.png");
   }
+  
+  .collection__item::before {
+    background-image: url("../images/index/gran@2x.png");
+  }
+  
+  .collection__item--planalto::before {
+    background-image: url("../images/index/planalto.png");
+  }
+  
+  .collection__item--piccollo::before {
+    background-image: url("../images/index/piccollo.png");
+  }
+  
+  .collection__item--danche::before {
+    background-image: url("../images/index/danche.png");
+  }
 } 
-
-
-/* Media quary Tablet */
 
 @media only screen and (min-width: 500px) {
   .container {
     padding: 0 20px;
   }
   
+  /* Site header styles begin */
   .logo__img {
     width: 236px;
     height: 26px;
+  }
+  /* Site header styles end */
+  
+  /* Site main styles begin */
+  /* Hero section styles started */
+  .hero__text {
+    background-image: url("../images/index/herobgtablet.png");
   }
   
   .hero__title {
@@ -246,42 +346,20 @@ only screen and (                min-resolution: 2dppx) {
   .hero__desc {
     font-size: 15px;
   }
-}
-
-@media only screen and (min-width: 768px) {
-  .site-header {
-    padding-top: 40px;
-    padding-bottom: 53px;
+  /* Hero section styles finished */
+  /* Collection section styles started */
+  .collection__title {
+    font-size: 40px;
   }
   
-  .site-header__menu {
-    display: none;
+  .collection__inner {
+    max-width: 410px;
+    margin: 0 auto;
   }
+  /* Collection section styles finished */
+  /* Site main styles end */
   
-  .navigation {
-    display: block;
-  }
-  
-  .hero__text {
-    padding: 104px 0 104px 54px;
-    text-align: left;
-    background-image: url("../images/index/herobgtablet.png");
-  }
-
-  .hero__text-inner {
-    max-width: 398px;
-    margin: 0;
-  }
-
-  .hero__title {
-    font-size: 48px;
-    line-height: 48px;
-  }
-
-  .hero__desc {
-    margin-bottom: 40px;
-    font-size: 15px;
-  }
+  /* Retina background images */
   @media
   only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (   min--moz-device-pixel-ratio: 2),
@@ -298,9 +376,174 @@ only screen and (                min-resolution: 2dppx) {
   } 
 }
 
+/* Media quary Tablet */
+
+@media only screen and (min-width: 768px) {
+  /* Site header styles begin */
+  .site-header {
+    padding-top: 40px;
+    padding-bottom: 53px;
+  }
+  
+  .site-header__menu {
+    display: none;
+  }
+  
+  .navigation {
+    display: block;
+  }
+  /* Site header styles end */
+  /* Site main styles begin */
+  /* Hero section styles started */
+  .hero {
+    padding-bottom: 203px;
+  }
+  
+  .hero__text {
+    padding: 104px 54px 104px;
+    text-align: left;
+    background-image: url("../images/index/herobgtablet.png");
+  }
+
+  .hero__title-wrapper {
+    max-width: 329px;
+    margin: 0;
+  }
+
+  .hero__title {
+    font-size: 48px;
+    line-height: 48px;
+  }
+  
+  .hero__desc-wrapper {
+    max-width: 398px;
+    margin: 0;
+  }
+
+  .hero__desc {
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+  /* Hero section styles finished */
+  /* Collection section styles started */
+  .collection {
+    padding-bottom: 144px;
+  }
+
+  .collection__shadow {
+    top: -78px;
+    z-index: -1;
+    height: 118px;
+  }
+  
+  .collection__title {
+    position: absolute;
+    top: -32px;
+    left: calc(50%);
+    z-index: -2;
+    width: 100%;
+    margin: 0;
+    transform: translateX(-50%);
+    font-size: 96px;
+    line-height: 72px;
+  }
+  
+  .collection__list {
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .collection__item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .collection__item::before {
+    width: 255px;
+    height: 193px;
+    margin: 0;
+    background-image: url("../images/index/grantablet.png");
+  }
+  
+  .collection__item--planalto::before {
+    width: 235px;
+    height: 178px;
+    margin: 15px 0 0 21px;
+    background-image: url("../images/index/planaltotablet.png");
+  }
+  
+  .collection__item--piccollo::before {
+    width: 256px;
+    height: 193px;
+    background-image: url("../images/index/piccollotablet.png");
+  }
+  
+  .collection__item--danche::before {
+    width: 256px;
+    height: 193px;
+    background-image: url("../images/index/danchetablet.png");
+  }
+
+  .collection__subtitle {
+    margin-bottom: 24px;
+  }
+
+  /* Retina background images */
+  
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+  
+    /* Retina-specific stuff here */
+  
+     .collection__item::before {
+      background-image: url("../images/index/grantablet@2x.png");
+     }
+     .collection__item--planalto::before {
+      background-image: url("../images/index/planaltotablet@2x.png");
+     }
+     .collection__item--piccollo::before {
+      background-image: url("../images/index/piccollotablet@2x.png");
+     }
+     .collection__item--danche::before {
+      background-image: url("../images/index/danchetablet@2x.png");
+     }
+  }
+  /* Collection section styles finished */
+  /* Site main styles end */
+}
 @media only screen and (min-width: 1050px) {
+  /* Site main styles begin */
+  /* Section hero styles started */
+  .hero__text {
+    background-image: url("../images/index/herobgdesktop.png");
+  }
+  
   .hero__title {
     font-size: 55px;
+  }
+  /* Section hero styles finished */
+  /* Site main styles end */
+  /* Retina background images */
+  
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    
+    /* Retina-specific stuff here */
+    
+    .hero__text {
+      background-image: url("../images/index/herobgdesktop@2x.png");
+    }
   }
 }
 
@@ -308,6 +551,7 @@ only screen and (                min-resolution: 2dppx) {
 /* Media quary Desktop */
 
 @media only screen and (min-width: 1280px) {
+  /* Site header styles begin */
   .site-header {
     padding-top: 43px;
   }
@@ -319,49 +563,102 @@ only screen and (                min-resolution: 2dppx) {
   .navigation__link:hover {
     color: var(--secondary-text-color);
   }
-
+  
   .navigation__link:active {
     opacity: 0.8;
   }
-  
-  .hero__text {
-    padding: 117px 0 116px 86px;
-    background-image: url("../images/index/herobgdesktop.png");
-  }
+  /* Site header styles end */
 
-  .hero__text-inner {
+  /* Site main styles begin */
+  /* Section hero styles started */
+  .hero {
+    padding-bottom: 136px;
+  }
+  
+  .hero__title-wrapper {
     max-width: 493px;
   }
-
+  
   .hero__title {
     margin-bottom: 32px;
     font-size: 72px;
     line-height: 72px;
   }
-
-  .hero__text-inner:nth-of-type(2) {
+  
+  .hero__desc-wrapper {
     max-width: 444px;
   }
-
+  
   .hero__desc {
     margin-bottom: 56px;
     font-size: 16px;
     font-weight: var(--global-fw);
     line-height: 26px;
   }
-
+  
   .hero__more {
     transition: background-color 0.4s ease, opacity 0.4s ease;
   }
-
+  
   .hero__more:hover {
     background-color: #66d2cf;
   }
-
+  
   .hero__more:active {
     opacity: 0.8;
   }
+  /* Section hero styles finished */
 
+  /* Section collection styles started */
+  .collection {
+    padding-bottom: 200px;
+  }
+  
+  .collection__title {
+    font-size: 150px;
+    top: -40px;
+  }
+
+  .collection__shadow {
+    top: -66px;
+  }
+
+  .collection__list {
+    column-gap: 30px;
+    text-align: center;
+  }
+
+  .collection__item {
+    display: block;
+  }
+
+  .collection__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .collection__item::before {
+    margin-bottom: 72px;
+  }
+
+  .collection__item--planalto::before {
+    width: 256px;
+    height: 193px;
+    margin: 0 0 72px;
+    background-image: url("../images/index/planaltodesktop.png");
+  }
+
+  .collection__inner {
+    max-width: 255px;
+  }
+
+  .collection__desc {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  /* Section collection styles finished */
+  /* Site main styles end */
+
+  /* Retina background images */
   
   @media
   only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -369,12 +666,12 @@ only screen and (                min-resolution: 2dppx) {
   only screen and (     -o-min-device-pixel-ratio: 2/1),
   only screen and (        min-device-pixel-ratio: 2),
   only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) { 
-    
+  only screen and (                min-resolution: 2dppx) {
+  
     /* Retina-specific stuff here */
-    
-    .hero__text {
-      background-image: url("../images/index/herobgdesktop@2x.png");
+  
+    .collection__item--planalto::before {
+      background-image: url("../images/index/planaltodesktop@2x.png");
     }
-  } 
+  }
 }
