@@ -306,6 +306,7 @@ only screen and (                min-resolution: 2dppx) {
   
   .collection__item::before {
     background-image: url("../images/index/gran@2x.png");
+    background-size: 100%;
   }
   
   .collection__item--planalto::before {
@@ -503,6 +504,7 @@ only screen and (                min-resolution: 2dppx) {
   
      .collection__item::before {
       background-image: url("../images/index/grantablet@2x.png");
+      background-size: 100%;
      }
      .collection__item--planalto::before {
       background-image: url("../images/index/planaltotablet@2x.png");
