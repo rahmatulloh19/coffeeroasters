@@ -309,15 +309,15 @@ only screen and (                min-resolution: 2dppx) {
   }
   
   .collection__item--planalto::before {
-    background-image: url("../images/index/planalto.png");
+    background-image: url("../images/index/planalto@2x.png");
   }
   
   .collection__item--piccollo::before {
-    background-image: url("../images/index/piccollo.png");
+    background-image: url("../images/index/piccollo@2x.png");
   }
   
   .collection__item--danche::before {
-    background-image: url("../images/index/danche.png");
+    background-image: url("../images/index/danche@2x.png");
   }
 } 
 
