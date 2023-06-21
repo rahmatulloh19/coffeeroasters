@@ -88,6 +88,14 @@ img {
   flex-grow: 1;
 }
 
+.open .site-header__menu-open {
+  display: block;
+}
+
+.open .site-header__menu {
+  background-image: url("../images/hamburmenuclose.svg");
+}
+
 /* Site header styles begin */
 
 .site-header {
@@ -112,25 +120,33 @@ img {
   border: none;
 }
 
-.navigation {
+.site-header__menu-open {
+  position: absolute;
+  top: 90px;
+  left: 0;
   display: none;
+  width: 100%;
+  height: calc(100vh - 90px);
+  background-image: linear-gradient(0deg, #fefcf781 0%, var(--global-content-color) 55.94%);
 }
 
 .navigation__list {
-  display: flex;
   margin: 0;
+  margin-top: 40px;
   padding-left: 0;
   column-gap: 32px;
   list-style: none;
+  text-align: center;
+}
+
+.navigation__item:not(:last-child) {
+  margin-bottom: 32px;
 }
 
 .navigation__link {
-  font-family: var(--secondary-ff);
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 15px;
-  letter-spacing: 0.9230769276618958px;
-  color: #83888f;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--secondary-text-color);
   text-decoration: none;
 }
 
@@ -283,7 +299,7 @@ img {
   position: relative;
   max-width: 768px;
   width: calc(100% - 48px);
-  margin: 24px auto 717px;
+  margin: 0 auto 959px;
   padding: 64px 24px 594px;
   background-color: var(--main-bg-color);
   background-image: url("../images/index/articlebg.svg");
@@ -303,17 +319,16 @@ img {
 .article__title {
   margin-top: 0;
   margin-bottom: 24px;
-  font-size: 27px;
+  font-size: 21px;
   line-height: 28px;
 }
 
 .article__desc {
-  margin-top: 0;
-  margin-bottom: 64px;
+  margin: 0;
   font-family: "Barlow", "Arial", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: var(--global-fw);
-  line-height: 25px;
+  line-height: 19px;
   opacity: 0.8;
 }
 
@@ -436,6 +451,12 @@ only screen and (                min-resolution: 2dppx) {
   }
 } 
 
+@media only screen and (min-width: 451px) {
+  .article {
+    margin-bottom: 800px;
+  }
+}
+
 @media only screen and (min-width: 500px) {
   .container {
     padding: 0 20px;
@@ -473,13 +494,13 @@ only screen and (                min-resolution: 2dppx) {
   }
   /* Collection section styles finished */
   /* Site article styles begin */
-  
   .article__title {
     font-size: 28px;
   }
   
   .article__desc {
     font-size: 15px;
+    line-height: 25px;
   }
   
   .article__item-title {
@@ -518,8 +539,30 @@ only screen and (                min-resolution: 2dppx) {
     display: none;
   }
   
-  .navigation {
+  .site-header__menu-open {
+    position: static;
     display: block;
+    width: auto;
+    height: auto;
+  }
+  
+  .navigation__list {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+  }
+  
+  .navigation__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+  
+  .navigation__link {
+    font-family: "Barlow", "Arial", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0.9230769276618958px;
+    color: #83888f;
   }
   /* Site header styles end */
   /* Site main styles begin */
@@ -620,27 +663,28 @@ only screen and (                min-resolution: 2dppx) {
   /* Collection section styles finished */
   /* Site article styles beign */
   .article {
+    margin-bottom: 530px;
     padding: 56px 58px 368px 57px;
   }
-
+  
   .article__title {
     font-size: 32px;
     line-height: 48px;
   }
-
+  
   .article__item {
     display: flex;
     align-items: center;
     padding: 41px 48px 41px 70px;
     text-align: left;
   }
-
+  
   .article__item::before {
     width: 56px;
     height: 56px;
     margin: 0;
   }
-
+  
   .article__item--track::before {
     height: 39px;
   }
@@ -819,7 +863,7 @@ only screen and (                min-resolution: 2dppx) {
   }
   /* Section collection styles finished */
   /* Site article styles begin */
-
+  
   .site-article {
     max-width: 1280px;
     padding: 100px 85px 210px;
@@ -828,18 +872,18 @@ only screen and (                min-resolution: 2dppx) {
     background-position-x: -90px;
     border-radius: 10px;
   }
-
+  
   .article__title {
     font-size: 40px;
     line-height: 48px;
   }
-
+  
   .article__desc {
     margin-bottom: 86px;
     font-size: 16px;
     line-height: 26px;
   }
-
+  
   .article__list {
     display: flex;
     justify-content: space-between;
@@ -853,26 +897,26 @@ only screen and (                min-resolution: 2dppx) {
     padding: 72px 48px 48px;
     text-align: center;
   }
-
+  
   .article__item:not(:last-child) {
     margin: 0;
   }
-
+  
   .article__item::before {
     width: 72px;
     height: 72px;
     margin: 0 auto 56px;
   }
-
+  
   .article__item--track::before {
     height: 50px;
     margin-bottom: 67px;
   }
-
+  
   .article__item-wrapper {
     margin: 0;
   }
-
+  
   .article__item-desc {
     font-size: 16px;
     line-height: 26px;
