@@ -278,6 +278,120 @@ img {
 }
 
 /* Collection section styles finished */
+/* Site article begin */
+.article {
+  position: relative;
+  max-width: 768px;
+  width: calc(100% - 48px);
+  margin: 24px auto 717px;
+  padding: 64px 24px 594px;
+  background-color: var(--main-bg-color);
+  background-image: url("../images/index/articlebg.svg");
+  background-repeat: no-repeat;
+  background-size: auto 70%;
+  background-position-y: 100%;
+  border-radius: 10px;
+  text-align: center;
+  color: var(--global-content-color);
+}
+
+.article__inner {
+  max-width: 595px;
+  margin: 0 auto;
+}
+
+.article__title {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 27px;
+  line-height: 28px;
+}
+
+.article__desc {
+  margin-top: 0;
+  margin-bottom: 64px;
+  font-family: "Barlow", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: var(--global-fw);
+  line-height: 25px;
+  opacity: 0.8;
+}
+
+.article__list {
+  position: absolute;
+  top: 305px;
+  left: calc(50%);
+  width: 100%;
+  margin: 0;
+  padding-left: 0;
+  transform: translateX(-50%);
+  list-style: none;
+}
+
+.article__item {
+  max-width: 595px;
+  width: calc(100% - 48px);
+  margin: 0 auto;
+  padding: 72px 34px 51px;
+  background-color: var(--secondary-bg-color);
+  border-radius: 8px;
+}
+
+.article__item::before {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 56px;
+  background-image: url("../images/index/markcoffee.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  content: "";
+}
+
+.article__item--gift::before {
+  background-image: url("../images/index/markgift.svg");
+  background-size: 100%;
+}
+
+.article__item--track::before {
+  height: 51px;
+  margin-bottom: 74px;
+  background-image: url("../images/index/marktrack.svg");
+}
+
+.article__item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.article__item-wrapper {
+  max-width: 388px;
+  margin: 0 auto;
+}
+
+.article__item-wrapper--size {
+  max-width: 371px;
+}
+
+.article__item-title {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: var(--main-fz);
+  line-height: var(--main-lh);
+  color: #FEFCF7;
+}
+
+.articel__item-title--fz {
+  font-size: 21px;
+}
+
+.article__item-desc {
+  margin: 0;
+  font-family: "Barlow", "Arial", sans-serif;
+  font-size: 15px;
+  font-weight: var(--global-fw);
+  line-height: 25px;
+}
+/* Site article end */
 /* Site main styles end */
 
 /* Site footer styles begin */
@@ -358,6 +472,20 @@ only screen and (                min-resolution: 2dppx) {
     margin: 0 auto;
   }
   /* Collection section styles finished */
+  /* Site article styles begin */
+  
+  .article__title {
+    font-size: 28px;
+  }
+  
+  .article__desc {
+    font-size: 15px;
+  }
+  
+  .article__item-title {
+    font-size: 24px;
+  }
+  /* Site article styles end */
   /* Site main styles end */
   
   /* Retina background images */
@@ -405,12 +533,12 @@ only screen and (                min-resolution: 2dppx) {
     text-align: left;
     background-image: url("../images/index/herobgtablet.png");
   }
-
+  
   .hero__title-wrapper {
     max-width: 329px;
     margin: 0;
   }
-
+  
   .hero__title {
     font-size: 48px;
     line-height: 48px;
@@ -420,7 +548,7 @@ only screen and (                min-resolution: 2dppx) {
     max-width: 398px;
     margin: 0;
   }
-
+  
   .hero__desc {
     margin-bottom: 40px;
     font-size: 15px;
@@ -430,7 +558,7 @@ only screen and (                min-resolution: 2dppx) {
   .collection {
     padding-bottom: 144px;
   }
-
+  
   .collection__shadow {
     top: -78px;
     z-index: -1;
@@ -454,7 +582,7 @@ only screen and (                min-resolution: 2dppx) {
     justify-content: center;
     text-align: left;
   }
-
+  
   .collection__item {
     display: flex;
     align-items: center;
@@ -485,11 +613,43 @@ only screen and (                min-resolution: 2dppx) {
     height: 193px;
     background-image: url("../images/index/danchetablet.png");
   }
-
+  
   .collection__subtitle {
     margin-bottom: 24px;
   }
+  /* Collection section styles finished */
+  /* Site article styles beign */
+  .article {
+    padding: 56px 58px 368px 57px;
+  }
 
+  .article__title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .article__item {
+    display: flex;
+    align-items: center;
+    padding: 41px 48px 41px 70px;
+    text-align: left;
+  }
+
+  .article__item::before {
+    width: 56px;
+    height: 56px;
+    margin: 0;
+  }
+
+  .article__item--track::before {
+    height: 39px;
+  }
+  .article__item-wrapper {
+    margin: 0 0 0 56px;
+  }
+  /* Site article styles end */
+  /* Site main styles end */
+  
   /* Retina background images */
   
   @media
@@ -499,25 +659,23 @@ only screen and (                min-resolution: 2dppx) {
   only screen and (        min-device-pixel-ratio: 2),
   only screen and (                min-resolution: 192dpi),
   only screen and (                min-resolution: 2dppx) {
-  
+    
     /* Retina-specific stuff here */
-  
-     .collection__item::before {
+    
+    .collection__item::before {
       background-image: url("../images/index/grantablet@2x.png");
       background-size: 100%;
-     }
-     .collection__item--planalto::before {
+    }
+    .collection__item--planalto::before {
       background-image: url("../images/index/planaltotablet@2x.png");
-     }
-     .collection__item--piccollo::before {
+    }
+    .collection__item--piccollo::before {
       background-image: url("../images/index/piccollotablet@2x.png");
-     }
-     .collection__item--danche::before {
+    }
+    .collection__item--danche::before {
       background-image: url("../images/index/danchetablet@2x.png");
-     }
+    }
   }
-  /* Collection section styles finished */
-  /* Site main styles end */
 }
 @media only screen and (min-width: 1050px) {
   /* Site main styles begin */
@@ -570,7 +728,7 @@ only screen and (                min-resolution: 2dppx) {
     opacity: 0.8;
   }
   /* Site header styles end */
-
+  
   /* Site main styles begin */
   /* Section hero styles started */
   .hero {
@@ -610,7 +768,7 @@ only screen and (                min-resolution: 2dppx) {
     opacity: 0.8;
   }
   /* Section hero styles finished */
-
+  
   /* Section collection styles started */
   .collection {
     padding-bottom: 200px;
@@ -620,48 +778,108 @@ only screen and (                min-resolution: 2dppx) {
     font-size: 150px;
     top: -40px;
   }
-
+  
   .collection__shadow {
     top: -66px;
     left: calc(50%);
     transform: translateX(-50%);
   }
-
+  
   .collection__list {
     column-gap: 30px;
     text-align: center;
   }
-
+  
   .collection__item {
     display: block;
   }
-
+  
   .collection__item:not(:last-child) {
     margin-bottom: 0;
   }
-
+  
   .collection__item::before {
     margin-bottom: 72px;
   }
-
+  
   .collection__item--planalto::before {
     width: 256px;
     height: 193px;
     margin: 0 0 72px;
     background-image: url("../images/index/planaltodesktop.png");
   }
-
+  
   .collection__inner {
     max-width: 255px;
   }
-
+  
   .collection__desc {
     font-size: 16px;
     line-height: 26px;
   }
   /* Section collection styles finished */
-  /* Site main styles end */
+  /* Site article styles begin */
 
+  .site-article {
+    max-width: 1280px;
+    padding: 100px 85px 210px;
+    margin: 0 auto 350px;
+    background-size: 110% 100%;
+    background-position-x: -90px;
+    border-radius: 10px;
+  }
+
+  .article__title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .article__desc {
+    margin-bottom: 86px;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .article__list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1110px;
+  }
+  
+  .article__item {
+    display: block;
+    max-width: 350px;
+    margin: 0;
+    padding: 72px 48px 48px;
+    text-align: center;
+  }
+
+  .article__item:not(:last-child) {
+    margin: 0;
+  }
+
+  .article__item::before {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 56px;
+  }
+
+  .article__item--track::before {
+    height: 50px;
+    margin-bottom: 67px;
+  }
+
+  .article__item-wrapper {
+    margin: 0;
+  }
+
+  .article__item-desc {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  /* Site article styles end */
+  /* Site main styles end */
+  
   /* Retina background images */
   
   @media
@@ -671,9 +889,9 @@ only screen and (                min-resolution: 2dppx) {
   only screen and (        min-device-pixel-ratio: 2),
   only screen and (                min-resolution: 192dpi),
   only screen and (                min-resolution: 2dppx) {
-  
+    
     /* Retina-specific stuff here */
-  
+    
     .collection__item--planalto::before {
       background-image: url("../images/index/planaltodesktop@2x.png");
     }
