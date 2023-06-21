@@ -64,6 +64,11 @@ img {
   height: auto;
 }
 
+::selection {
+  color: var(--global-content-color);
+  background-color: var(--secondary-bg-color);
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -81,6 +86,21 @@ img {
   margin: 0 auto;
   padding: 0 24px;
 }
+
+.global-link {
+  display: inline-block;
+  min-width: 217px;
+  padding: 15px 16px 16px;
+  font-size: 18px;
+  font-weight: var(--main-fw);
+  line-height: 25px;
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+  background-color: var(--secondary-bg-color);
+  border-radius: 6px;
+}
+
 
 /* Sitcky footer */
 
@@ -199,20 +219,6 @@ img {
   line-height: 25px;
   letter-spacing: 0px;
   opacity: 0.8;  
-}
-
-.hero__more {
-  display: inline-block;
-  min-width: 217px;
-  padding: 15px 16px 16px 16px;
-  font-size: 18px;
-  font-weight: var(--main-fw);
-  line-height: 25px;
-  text-decoration: none;
-  text-align: center;
-  color: inherit;
-  background-color: var(--secondary-bg-color);
-  border-radius: 6px;
 }
 
 /* Hero section styles finished */
@@ -407,6 +413,75 @@ img {
   line-height: 25px;
 }
 /* Site article end */
+/* Section plan styles started */
+
+.plan {
+  margin-bottom: 120px;
+  text-align: center;
+  color: var(--secondary-text-color);
+}
+
+.plan__title {
+  margin-top: 0;
+  margin-bottom: 80px;
+  font-size: var(--main-fz);
+  font-weight: var(--main-fw);
+  line-height: var(--main-lh);
+  color: #83888f;
+}
+
+.plan__list {
+  margin: 0 0 80px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.plan__item:not(:last-child) {
+  margin-bottom: 56px;
+}
+
+.plan__item::before {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 72px;
+  font-weight: var(--main-fw);
+  line-height: 72px;
+  color: var(--mixin);
+  content: "01";
+}
+
+.plan__item--middle::before {
+  content: "02";
+}
+
+.plan__item--finally::before {
+  content: "03";
+}
+
+.plan__subtitle {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 28px;
+  font-weight: var(--main-fw);
+  line-height: var(--main-lh);
+}
+
+.plan__subtitle--size {
+  font-size: 24px;    
+}
+
+.plan__desc {
+  margin: 0;
+  font-family: "Barlow", "Arial", sans-serif;
+  font-size: 15px;
+  font-weight: var(--global-fw);
+  line-height: 25px;
+}
+
+.plan__link {
+  color: var(--global-content-color);
+}
+/* Section plan styles finished */
 /* Site main styles end */
 
 /* Site footer styles begin */
@@ -692,6 +767,39 @@ only screen and (                min-resolution: 2dppx) {
     margin: 0 0 0 56px;
   }
   /* Site article styles end */
+  /* Section plan styles started */
+  
+  .plan {
+    margin-bottom: 144px;
+    text-align: left;
+  }
+  
+  .plan__title {
+    margin-bottom: 0;
+  }
+  
+  .plan__title::after {
+    display: block;
+    width: 497px;
+    height: 31px;
+    margin-top: 40px;
+    margin-bottom: 48px;
+    background-image: url("../images/index/extraimg.svg");
+    background-repeat: no-repeat;
+    content: "";
+  }
+  
+  .plan__list {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 36px;
+  }
+  
+  .plan__subtitle {
+    font-size: 28px;
+    margin-bottom: 38px;
+  }
+  /* Section plan styles finished */
   /* Site main styles end */
   
   /* Retina background images */
@@ -800,15 +908,15 @@ only screen and (                min-resolution: 2dppx) {
     line-height: 26px;
   }
   
-  .hero__more {
+  .global-link {
     transition: background-color 0.4s ease, opacity 0.4s ease;
   }
   
-  .hero__more:hover {
+  .global-link:hover {
     background-color: #66d2cf;
   }
   
-  .hero__more:active {
+  .global-link:active {
     opacity: 0.8;
   }
   /* Section hero styles finished */
@@ -922,6 +1030,39 @@ only screen and (                min-resolution: 2dppx) {
     line-height: 26px;
   }
   /* Site article styles end */
+  /* Section plan styles started */
+
+  .plan {
+    margin-bottom: 200px;
+  }
+
+  .plan__title::after {
+    width: 791px;
+    margin-top: 80px;
+    margin-bottom: 67px;
+    background-image: url("../images/index/extraimgdesktop.svg");
+  }
+
+  .plan__list {
+    column-gap: 95px;
+    margin-bottom: 64px;
+  }
+
+  .plan__subtitle-wrapper {
+    max-width: 197px;
+  }
+
+  .plan__subtitle {
+    margin-bottom: 43px;
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .plan__desc {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  /* Section plan styles finished */
   /* Site main styles end */
   
   /* Retina background images */
